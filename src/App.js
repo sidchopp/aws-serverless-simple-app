@@ -30,16 +30,20 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     callAPI(firstName, lastName);
+    setFirstName('');
+    setLastName('');
   }
 
   return (
     <div >
-      <form >
+      <h2 style={{ textAlign: 'center' }}>A simple web application that has a React frontend, which triggers a lambda function when a user submits the form. An API Gateway is connecting the front-end & back-end, the data( firstname, lastname) submitted by the user is stored in DynamoDB and this App is deployed on AWS Amplify. </h2>
+      <form onSubmit={handleSubmit}  >
         <label htmlFor='firstName'>First Name :</label>
         <input
           type="text"
           id="firstName"
           name="fname"
+          required
           placeholder="Your First name.."
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)} />
@@ -48,11 +52,12 @@ function App() {
           type="text"
           id="lastName"
           name='lname'
+          required
           placeholder="Your Last name.."
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
         />
-        <button type="submit" onClick={handleSubmit}  >Call API</button>
+        <button className='button' type="submit"  >Call API</button>
       </form>
     </div>
   );
