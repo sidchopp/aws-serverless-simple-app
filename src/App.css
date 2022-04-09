@@ -1,6 +1,29 @@
-/* body {
-  background-color: #232f3e;
-} */
+:root {
+  --max-width: 1120px;
+  --fixed-width: 500px;
+  --fluid-width: 90vw;
+  --breakpoint-lg: 992px;
+  --nav-height: 30rem;
+  --background-color: #f2f2f2;
+}
+body {
+  background-color: var(--background-color);
+}
+.page {
+  min-height: calc(100vh - var(--nav-height));
+  display: grid;
+  align-items: center;
+  margin-top: -3rem;
+  padding: 20px;
+}
+.container {
+  width: var(--fluid-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.full-page {
+  min-height: 100vh;
+}
 label,
 button {
   color: #ff9900;
@@ -20,8 +43,6 @@ select {
 }
 div {
   border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
 }
 
 .button {
