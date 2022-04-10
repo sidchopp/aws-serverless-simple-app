@@ -24,6 +24,9 @@ body {
 .full-page {
   min-height: 100vh;
 }
+.header {
+  text-align: center;
+}
 label,
 button {
   color: #ff9900;
